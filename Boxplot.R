@@ -38,7 +38,9 @@ summary(PID) # Beschreibung der Verteilung
 
 
 ## Darstellung eines Merkmals als Boxplot:
-boxplot(PID$glucose, main = "Verteilung des Merkmals 'glucose' als Boxplot", ylab = "Glukosekonzentration")
+boxplot(PID$glucose, main = "Verteilung des Merkmals 'glucose' als Boxplot", 
+        ylab = "Glukosekonzentration",
+        xlab = "Glukose")
 
 ## Alle Merkmale als Uebersicht darstellen:
 boxplot(PID, main = "Alle Merkmale", ylab = "Merkmalsausprägung")
