@@ -13,7 +13,7 @@
 ## R-Version: R-4.1.0
 ## 
 ## Projekt-Seite: https://www.faes.de/ad-oculos/
-## Guenter Faes, spv@faes.de
+## Günter Faes, spv@faes.de
 ##***************************************************
 
 ## Beispieldaten laden:
