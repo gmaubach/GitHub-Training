@@ -2,7 +2,7 @@
 ## Ad-Oculos-Projekt-Video R Formelnotation
 ## In diesem Skript werden verschiedene
 ## Formelnotationen anhand eines Regressionsmodells 
-## beschrieben. Inhaltliche Aspekte wie KausalitÃÂ¤t 
+## beschrieben. Inhaltliche Aspekte wie Kausalität 
 ## und Interpretation spielen dabei keine Rolle!
 ## 
 ## 
@@ -13,7 +13,7 @@
 ## R-Version: R-4.1.0
 ## 
 ## Projekt-Seite: https://www.faes.de/ad-oculos/
-## G�nter Faes, spv@faes.de
+## Günter Faes, spv@faes.de
 ##***************************************************
 
 ## Beispieldaten laden:
@@ -88,7 +88,7 @@ summary(Y)
 ##**********************************************************************
 ## 3a. Beispiel, multiples lineares Modell mit Wechselwirkung:
 # In diesem Modell wird der Einfluss von X2 und X3 und der
-# Term X2*X3 beruecksichtigt.
+# Term X2*X3 berücksichtigt.
 # Modell: Y = a + b1x1 + b2x2 * b3X3
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -99,7 +99,7 @@ summary(Y)
 Y <- lm(Quality ~ Alcohol + VolatileAcidity * FixedAcidity, data = Rotwein)
 summary(Y)
 
-# Daten- und Interaktionsuebersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -115,7 +115,7 @@ View(Y_Interaktion)
 # X3: cyl, Number of cylinders, kategorial
 # Y: mpg, Miles/(US) gallon
 
-# FÃÂ¼r das Modell ist es erforderlich, das Merkmal cyl vom Typ num
+# Für das Modell ist es erforderlich, das Merkmal cyl vom Typ num
 # nach Typ factor zu wandeln:
 Auto$cyl <- as.factor(Auto$cyl)
 
@@ -131,7 +131,7 @@ View(Y_Interaktion)
 
 ##**********************************************************************
 ## 4. Beispiel, multiples lineares Modell mit Interaktion:
-# In diesem Modell wird nur das Produkt aus X2 und X3 berÃ¼cksichtigt.
+# In diesem Modell wird nur das Produkt aus X2 und X3 berücksichtigt.
 # Modell: Y = a + b1x1 + (b2x2 : b3X3) 
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -142,7 +142,7 @@ View(Y_Interaktion)
 Y <- lm(Quality ~ Alcohol + TotalSulfurDioxide : FreeSulfurDioxide, data = Rotwein)
 summary(Y)
 
-# Daten- und InteraktionsÃÂ¼bersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -150,7 +150,7 @@ View(Y_Interaktion)
 
 
 ##**********************************************************************
-## 5a. Beispiel, allgemeines zur ParameterschÃ¤tzung einer Funktion:
+## 5a. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Den Schnittpunkt (Intercept) auf 0 festlegen.
 
 # Modell: Y = bx
@@ -163,8 +163,8 @@ summary(Y)
 
 
 ##**********************************************************************
-## 5b. Beispiel, allgemeines zur Parameterschaetzung einer Funktion:
-# Ausfuehren einer Rechenoperation innerhalb der Formel.
+## 5b. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
+# Ausfuühren einer Rechenoperation innerhalb der Formel.
 
 # Modell: Y = a + b1x1 + b2x2^2
 # Daten: Kontinuierlich, Rotwein
@@ -181,10 +181,10 @@ View(Y_Daten)
 
 
 ##**********************************************************************
-## 5c. Beispiel, allgemeines zur ParameterschÃ¤tzung einer Funktion:
-# Alle unabhaengige Merkmale in einer Formel beruecksichtigen:
+## 5c. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
+# Alle unabhängige Merkmale in einer Formel berücksichtigen:
 
-# Aus Beispielgruenden wird ein verkleinerter Rotwein-Datensatz gebildet:
+# Aus Beispielgründen wird ein verkleinerter Rotwein-Datensatz gebildet:
 Sub_Rotwein <- data.frame(Rotwein[,1:4], Rotwein[,11:12])
 View(Sub_Rotwein)
 
@@ -196,13 +196,13 @@ View(Sub_Rotwein)
 Y <- lm(Quality ~ . , data = Sub_Rotwein)
 summary(Y)
 
-# DatenÃÂ¼bersicht auf Basis des Modells:
+# Datenübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
 
 ##**********************************************************************
-## 5d. Beispiel, allgemeines zur ParameterschÃÂ¤tzung einer Funktion:
+## 5d. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Ausschluss einiger Merkmale aus der Formel:
 
 # Modell: Y = a + b1x1 + b2x2 - ... - bnxn
@@ -214,7 +214,7 @@ View(Y_Daten)
 Y <- lm(Quality ~ . - FixedAcidity - VolatileAcidity - CitricAcid, data = Sub_Rotwein)
 summary(Y)
 
-# Daten- und InteraktionsÃÂ¼bersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
