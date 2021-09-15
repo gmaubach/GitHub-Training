@@ -2,14 +2,14 @@
 ##* Ad-Oculos-Projekt-Video R Formelnotation
 ##* In diesem Skript werden verschiedene
 ##* Formelnotationen anhand eines Regressionsmodells 
-##* beschrieben. Inhaltliche Aspekte wie Kausalität 
+##* beschrieben. Inhaltliche Aspekte wie KausalitÃ¤t 
 ##* und Interpretation spielen dabei keine Rolle!
 ##* 
 ##* 
 ##* Datum: 07.12.2020
 ##* Version: 1.0
 ##* 
-##* ## RStudio: Version 1.4.1717
+## RStudio: Version 1.4.1717
 ## R-Version: R-4.1.0
 ##* 
 ##* Projekt-Seite: https://www.faes.de/ad-oculos/
@@ -115,7 +115,7 @@ View(Y_Interaktion)
 # X3: cyl, Number of cylinders, kategorial
 # Y: mpg, Miles/(US) gallon
 
-# Für das Modell ist es erforderlich, das Merkmal cyl vom Typ num
+# FÃ¼r das Modell ist es erforderlich, das Merkmal cyl vom Typ num
 # nach Typ factor zu wandeln:
 Auto$cyl <- as.factor(Auto$cyl)
 
@@ -131,7 +131,7 @@ View(Y_Interaktion)
 
 ##**********************************************************************
 ## 4. Beispiel, multiples lineares Modell mit Interaktion:
-# In diesem Modell wird nur das Produkt aus X2 und X3 ber�cksichtigt.
+# In diesem Modell wird nur das Produkt aus X2 und X3 berücksichtigt.
 # Modell: Y = a + b1x1 + (b2x2 : b3X3) 
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -142,7 +142,7 @@ View(Y_Interaktion)
 Y <- lm(Quality ~ Alcohol + TotalSulfurDioxide : FreeSulfurDioxide, data = Rotwein)
 summary(Y)
 
-# Daten- und Interaktionsübersicht auf Basis des Modells:
+# Daten- und InteraktionsÃ¼bersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -150,7 +150,7 @@ View(Y_Interaktion)
 
 
 ##**********************************************************************
-## 5a. Beispiel, allgemeines zur Parametersch�tzung einer Funktion:
+## 5a. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Den Schnittpunkt (Intercept) auf 0 festlegen.
 
 # Modell: Y = bx
@@ -175,13 +175,13 @@ summary(Y)
 Y <- lm(Quality ~ Alcohol + I(CitricAcid^2), data = Rotwein)
 summary(Y)
 
-# Datenübersicht auf Basis des Modells:
+# DatenÃ¼bersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
 
 ##**********************************************************************
-## 5c. Beispiel, allgemeines zur Parametersch�tzung einer Funktion:
+## 5c. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Alle unabhaengige Merkmale in einer Formel beruecksichtigen:
 
 # Aus Beispielgruenden wird ein verkleinerter Rotwein-Datensatz gebildet:
@@ -196,13 +196,13 @@ View(Sub_Rotwein)
 Y <- lm(Quality ~ . , data = Sub_Rotwein)
 summary(Y)
 
-# Datenübersicht auf Basis des Modells:
+# DatenÃ¼bersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
 
 ##**********************************************************************
-## 5d. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
+## 5d. Beispiel, allgemeines zur ParameterschÃ¤tzung einer Funktion:
 # Ausschluss einiger Merkmale aus der Formel:
 
 # Modell: Y = a + b1x1 + b2x2 - ... - bnxn
@@ -214,7 +214,7 @@ View(Y_Daten)
 Y <- lm(Quality ~ . - FixedAcidity - VolatileAcidity - CitricAcid, data = Sub_Rotwein)
 summary(Y)
 
-# Daten- und Interaktionsübersicht auf Basis des Modells:
+# Daten- und InteraktionsÃ¼bersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
