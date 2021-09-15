@@ -115,7 +115,7 @@ View(Y_Interaktion)
 # X3: cyl, Number of cylinders, kategorial
 # Y: mpg, Miles/(US) gallon
 
-# FÃÂ¼r das Modell ist es erforderlich, das Merkmal cyl vom Typ num
+# Für das Modell ist es erforderlich, das Merkmal cyl vom Typ num
 # nach Typ factor zu wandeln:
 Auto$cyl <- as.factor(Auto$cyl)
 
@@ -150,7 +150,7 @@ View(Y_Interaktion)
 
 
 ##**********************************************************************
-## 5a. Beispiel, allgemeines zur ParameterschÃ¤tzung einer Funktion:
+## 5a. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Den Schnittpunkt (Intercept) auf 0 festlegen.
 
 # Modell: Y = bx
@@ -164,7 +164,8 @@ summary(Y)
 
 ##**********************************************************************
 ## 5b. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
-# Ausfuehren einer Rechenoperation innerhalb der Formel.
+# Ausfuühren einer Rechenoperation innerhalb der Formel.
+
 
 # Modell: Y = a + b1x1 + b2x2^2
 # Daten: Kontinuierlich, Rotwein
@@ -181,10 +182,10 @@ View(Y_Daten)
 
 
 ##**********************************************************************
-## 5c. Beispiel, allgemeines zur ParameterschÃ¤tzung einer Funktion:
-# Alle unabhaengige Merkmale in einer Formel beruecksichtigen:
+## 5c. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
+# Alle unabhängige Merkmale in einer Formel berücksichtigen:
 
-# Aus Beispielgruenden wird ein verkleinerter Rotwein-Datensatz gebildet:
+# Aus Beispielgründen wird ein verkleinerter Rotwein-Datensatz gebildet:
 Sub_Rotwein <- data.frame(Rotwein[,1:4], Rotwein[,11:12])
 View(Sub_Rotwein)
 
@@ -196,13 +197,13 @@ View(Sub_Rotwein)
 Y <- lm(Quality ~ . , data = Sub_Rotwein)
 summary(Y)
 
-# DatenÃÂ¼bersicht auf Basis des Modells:
+# Datenübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
 
 ##**********************************************************************
-## 5d. Beispiel, allgemeines zur ParameterschÃÂ¤tzung einer Funktion:
+## 5d. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Ausschluss einiger Merkmale aus der Formel:
 
 # Modell: Y = a + b1x1 + b2x2 - ... - bnxn
@@ -214,7 +215,7 @@ View(Y_Daten)
 Y <- lm(Quality ~ . - FixedAcidity - VolatileAcidity - CitricAcid, data = Sub_Rotwein)
 summary(Y)
 
-# Daten- und InteraktionsÃÂ¼bersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
