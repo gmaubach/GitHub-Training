@@ -2,7 +2,7 @@
 ## Ad-Oculos-Projekt-Video R Formelnotation
 ## In diesem Skript werden verschiedene
 ## Formelnotationen anhand eines Regressionsmodells 
-## beschrieben. Inhaltliche Aspekte wie KausalitÃÂ¤t 
+## beschrieben. Inhaltliche Aspekte wie Kausalität 
 ## und Interpretation spielen dabei keine Rolle!
 ## 
 ## 
@@ -13,7 +13,7 @@
 ## R-Version: R-4.1.0
 ## 
 ## Projekt-Seite: https://www.faes.de/ad-oculos/
-## G�nter Faes, spv@faes.de
+## Günter Faes, spv@faes.de
 ##***************************************************
 
 ## Beispieldaten laden:
@@ -88,7 +88,7 @@ summary(Y)
 ##**********************************************************************
 ## 3a. Beispiel, multiples lineares Modell mit Wechselwirkung:
 # In diesem Modell wird der Einfluss von X2 und X3 und der
-# Term X2*X3 beruecksichtigt.
+# Term X2*X3 berücksichtigt.
 # Modell: Y = a + b1x1 + b2x2 * b3X3
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -99,7 +99,7 @@ summary(Y)
 Y <- lm(Quality ~ Alcohol + VolatileAcidity * FixedAcidity, data = Rotwein)
 summary(Y)
 
-# Daten- und Interaktionsuebersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -122,7 +122,7 @@ Auto$cyl <- as.factor(Auto$cyl)
 Y <- lm(mpg ~ hp +  wt * cyl, data = Auto)
 summary(Y)
 
-# Daten- und Interaktionsuebersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -131,7 +131,7 @@ View(Y_Interaktion)
 
 ##**********************************************************************
 ## 4. Beispiel, multiples lineares Modell mit Interaktion:
-# In diesem Modell wird nur das Produkt aus X2 und X3 berÃ¼cksichtigt.
+# In diesem Modell wird nur das Produkt aus X2 und X3 berücksichtigt.
 # Modell: Y = a + b1x1 + (b2x2 : b3X3) 
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -142,7 +142,7 @@ View(Y_Interaktion)
 Y <- lm(Quality ~ Alcohol + TotalSulfurDioxide : FreeSulfurDioxide, data = Rotwein)
 summary(Y)
 
-# Daten- und InteraktionsÃÂ¼bersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -163,7 +163,7 @@ summary(Y)
 
 
 ##**********************************************************************
-## 5b. Beispiel, allgemeines zur Parameterschaetzung einer Funktion:
+## 5b. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Ausfuehren einer Rechenoperation innerhalb der Formel.
 
 # Modell: Y = a + b1x1 + b2x2^2
@@ -175,7 +175,7 @@ summary(Y)
 Y <- lm(Quality ~ Alcohol + I(CitricAcid^2), data = Rotwein)
 summary(Y)
 
-# DatenÃÂ¼bersicht auf Basis des Modells:
+# Datenübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
