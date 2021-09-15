@@ -2,7 +2,7 @@
 ## Boxplot-Darstellung von mehreren Beobachtungen
 ## unter ausschliesslicher Verwendung der R-Basis-Grafik
 ##
-## Guenter Faes, https://www.faes.de/ad-oculos/
+## Günter Faes, https://www.faes.de/ad-oculos/
 ## Version 1.0, 04.10.2020
 ##
 ## RStudio: Version 1.4.1717
