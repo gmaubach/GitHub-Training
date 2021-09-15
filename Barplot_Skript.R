@@ -34,10 +34,21 @@ data(PimaIndiansDiabetes)
 PID <- PimaIndiansDiabetes
 
 
+## Pruefen auf NA's:
+Anzahl_NA = 0
+Anzahl_NA <- sum(is.na.data.frame(PID))
+if(Anzahl_NA != 0) {
+  cat("   ", Anzahl_NA, " NAs vorhanden, werden entfernt!", "\n", "\n")
+  PID <- na.exclude(PID)
+} else {
+  print("Datensatz vollstaendig!")
+}
+
 ## Ein paar Informationen über den Datensatz:
-View(PID)    # Darstellung als Tabelle    
+View(PID)       
 str(PID)     # Darstellung der Struktur
 summary(PID) # Beschreibung der Verteilung
+
 
 ## --------------------- Barplotbeispiele -----------------------
 
