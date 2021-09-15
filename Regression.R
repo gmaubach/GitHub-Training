@@ -122,7 +122,7 @@ Auto$cyl <- as.factor(Auto$cyl)
 Y <- lm(mpg ~ hp +  wt * cyl, data = Auto)
 summary(Y)
 
-# Daten- und Interaktionsuebersicht auf Basis des Modells:
+# Daten- und Interaktionsübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 Y_Interaktion <- model.matrix(Y)
@@ -166,6 +166,7 @@ summary(Y)
 ## 5b. Beispiel, allgemeines zur Parameterschätzung einer Funktion:
 # Ausfuühren einer Rechenoperation innerhalb der Formel.
 
+
 # Modell: Y = a + b1x1 + b2x2^2
 # Daten: Kontinuierlich, Rotwein
 # X1: Alcohol
@@ -175,7 +176,7 @@ summary(Y)
 Y <- lm(Quality ~ Alcohol + I(CitricAcid^2), data = Rotwein)
 summary(Y)
 
-# DatenÃÂ¼bersicht auf Basis des Modells:
+# Datenübersicht auf Basis des Modells:
 Y_Daten <- model.frame(Y)
 View(Y_Daten)
 
